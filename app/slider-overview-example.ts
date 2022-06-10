@@ -17,7 +17,9 @@ export class SliderOverviewExample {
   onChange(event: MatSliderChange) {
     if (event.value < 2) {
       event.source.value = 2;
+      this.value = 2;
     }
+    console.log(this.value);
   }
 }
 
