@@ -15,7 +15,6 @@ export class SliderOverviewExample {
   constructor() {}
 
   onChange(event: MatSliderChange) {
-    console.log(event.value);
     if (event.value < 2) {
       event.source.value = 2;
     }
