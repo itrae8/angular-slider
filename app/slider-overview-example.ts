@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { MatSliderChange } from '@angular/material/slider/typings/slider';
 
 /**
@@ -13,7 +13,15 @@ export class SliderOverviewExample {
   valeurDefaut = 2;
   value = 2;
 
+  @ViewChild('sliderTest', { read: ElementRef })
+  slider: ElementRef;
+
   constructor() {}
+
+  ngAfterViewInit(){
+    var trackWrapper = this.slider.nativeElement.querySelector('.mat-slider-track-wrapper');
+    trackWrapper.insertAdjacentHTML('beforeend', '<div class="mat-slider-track-fill" ng-reflect-ng-style="[object Object]" style="transform: translateX(0px) scale3d(0.2, 1, 1);background-color: #ff4040;"></div>');
+  }
 
   onChange(event: MatSliderChange) {
     if (event.value < 2) {
