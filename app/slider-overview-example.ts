@@ -10,8 +10,8 @@ import { MatSliderChange } from '@angular/material/slider/typings/slider';
   styleUrls: ['slider-overview-example.css'],
 })
 export class SliderOverviewExample {
-  valeurDefaut = 2;
-  value = 2;
+  valeurDefaut = 3;
+  value = 3;
 
   @ViewChild('sliderTest', { read: ElementRef })
   slider: ElementRef;
@@ -20,7 +20,7 @@ export class SliderOverviewExample {
 
   ngAfterViewInit(){
     var trackWrapper = this.slider.nativeElement.querySelector('.mat-slider-track-wrapper');
-    trackWrapper.insertAdjacentHTML('beforeend', '<div class="mat-slider-track-fill" ng-reflect-ng-style="[object Object]" style="transform: translateX(0px) scale3d(0.2, 1, 1);background-color: #ff4040;"></div>');
+    trackWrapper.insertAdjacentHTML('beforeend', `<div class="mat-slider-track-fill" ng-reflect-ng-style="[object Object]" style="transform: translateX(0px) scale3d(0.${this.valeurDefaut}, 1, 1);background-color: #ff4040;"></div>`);
   }
 
   onChange(event: MatSliderChange) {
