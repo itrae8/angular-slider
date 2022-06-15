@@ -10,6 +10,7 @@ import { MatSliderChange } from '@angular/material/slider/typings/slider';
   styleUrls: ['slider-overview-example.css'],
 })
 export class SliderOverviewExample {
+  valeurDefaut = 2;
   value = 2;
 
   constructor() {}
@@ -21,6 +22,10 @@ export class SliderOverviewExample {
     }
     console.log(this.value);
   }
+
+  formatValeur = (valeur: number) => {
+    return valeur - this.valeurDefaut;
+  };
 }
 
 /**  Copyright 2019 Google Inc. All Rights Reserved.
